@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
+import { rootMetadata } from "@/config/metadata";
 import "./globals.css";
+import { ReactQueryProvider } from "@/providers";
+import { PublicLayout } from "@/public/PublicLayout";
 
-export const metadata: Metadata = {
-  title: "PSP Project",
-  description: "exam test",
-};
+export const metadata = rootMetadata;
 
 type RootLayoutProps = Readonly<{
   children: React.ReactNode;
@@ -13,8 +12,10 @@ type RootLayoutProps = Readonly<{
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body>
-        <main>{children}</main>
+      <body className={`w-screen h-screen flex flex-col overflow-x-hidden`}>
+        <ReactQueryProvider>
+          <PublicLayout>{children}</PublicLayout>
+        </ReactQueryProvider>
       </body>
     </html>
   );
