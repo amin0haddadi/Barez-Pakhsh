@@ -1,25 +1,22 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { Post } from "../../types";
-
-const fetchPosts = async (): Promise<Post[]> => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  if (!res.ok) {
-    throw new Error("Failed to fetch posts");
-  }
-  return res.json();
-};
+import { getPosts } from "@/services/post/getPosts";
+import CenteredListItem from "@/components/CenteredListItem";
 
 const ListPage = () => {
-  const { data } = useQuery<Post[], Error>({
+  const { data, isLoading, error } = useQuery<Post[], Error>({
     queryKey: ["posts"],
-    queryFn: fetchPosts,
+    queryFn: getPosts,
   });
 
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
-    <ul>
+    <ul className="flex flex-col gap-4 m-8">
       {data?.map((post) => (
-        <li key={post.id}>{post.title}</li>
+        <CenteredListItem key={post.id} text={post.title} />
       ))}
     </ul>
   );
