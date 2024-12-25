@@ -35,7 +35,6 @@ export interface User {
   company: Company;
 }
 
-export interface CenteredListItemProps {
-  text: string;
-  key: number;
-}
+export interface CenteredListItemProps {}
+
+export interface HeaderProps {}

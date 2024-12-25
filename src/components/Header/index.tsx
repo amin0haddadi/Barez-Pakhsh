@@ -1,14 +1,15 @@
 "use client";
 import { HEADER_ITEMS } from "@/constants";
+import { HeaderProps } from "@/types";
 import { getRandomUser } from "@/utils/getRandomUser";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-const Header = () => {
+const Header: FC<HeaderProps> = () => {
   const path = usePathname();
 
-  const [isEligible, setIsEligible] = useState(false);
+  const [isEligible, setIsEligible] = useState<boolean>(false);
 
   useEffect(() => {
     getRandomUser();
