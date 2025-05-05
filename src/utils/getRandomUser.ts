@@ -1,4 +1,4 @@
-import { users } from "../../db";
+const users:number[]=[]
 
 export const getRandomUser = async () => {
   const randomUser = users[Math.floor(Math.random() * users.length)];

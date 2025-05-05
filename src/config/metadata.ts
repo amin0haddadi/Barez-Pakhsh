@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 const rootMetadata: Metadata = {
   title: {
-    template: "%s - PSP",
-    default: "شرکت PSP",
+    template: "%s - Barez-Pakhsh",
+    default: "شرکت BarezPakhsh",
   },
-  description: "شرکت حمل و نقل بین المللی PSP",
+  description: "بارزپخش - تأمین و توزیع قطعات یدکی خودرو",
   authors: [
     {
       name: "Amin Haddadi",

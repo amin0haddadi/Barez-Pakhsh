@@ -1,4 +1,3 @@
-import CenteredListItem from "@/components/CenteredListItem";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,7 +5,7 @@ export const metadata: Metadata = {
 };
 
 const ListPage = () => {
-  return <CenteredListItem />;
+  return <div >list</div>
 };
 
 export default ListPage;
