@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 const MainPage = () => {
   return (
     <h1 className="flex items-center justify-center min-h-screen text-2xl">
-      wellcome!
+      wellcome to BAREZ-PAKHSH !
     </h1>
   );
 };
