@@ -16,7 +16,7 @@ const HotelCard = ({ hotels }: IHotelCardProps) => {
         {hotels.map((hotel: Hotel) => (
           <Link
             key={hotel.id}
-            className="border rounded-xl shadow p-4 max-w-fit hover:scale-105 cursor-pointer transition"
+            className="border rounded-xl shadow p-4 max-w-fit hover:scale-105 cursor-pointer transition duration-300"
             href={`/hotels/${hotel.id}`}
           >
             <Image
@@ -32,11 +32,6 @@ const HotelCard = ({ hotels }: IHotelCardProps) => {
               {hotel.description}
             </p>
             <p className="mt-1">${hotel.price_per_night}/night</p>
-            {/* <ul className="mt-2 text-sm text-gray-500">
-                  {hotel.amenities.map((amenity, i) => (
-                    <li key={i}>• {amenity}</li>
-                  ))}
-                </ul> */}
           </Link>
         ))}
       </div>

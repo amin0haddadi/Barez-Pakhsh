@@ -1,10 +1,11 @@
+import Basket from "@/components/Basket";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "صفحه تنظیمات",
+  title: "سبد خرید",
 };
 const SettingPage = () => {
-  return <div>setting</div>;
+  return <Basket/>
 };
 
 export default SettingPage;

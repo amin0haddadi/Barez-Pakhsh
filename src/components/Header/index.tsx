@@ -11,11 +11,11 @@ const Header: FC<HeaderProps> = () => {
   return (
     <header className="flex flex-row justify-center w-[100%] bg-sky-300 p-5 gap-4">
       {HEADER_ITEMS.map((item: string, index: number) => (
-        <Link key={index} href={`/${index===0?"":item}`}>
+        <Link key={index} href={`/${index === 0 ? "" : item}`}>
           <h3
             className={`text-xl text-white  ${
-              path === "/" + item
-                ? "text-blue-600 scale-110"
+              path.includes("/" + item) || (path === "/" && item === "Home")
+                ? "text-blue-700 scale-110"
                 : "hover:text-blue-400 hover:scale-105"
             }`}
           >

@@ -1,13 +1,15 @@
+@import "react-datepicker/dist/react-datepicker.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply bg-[#FAFAFA];
-  }
+  @apply bg-[#FAFAFA];
+}
 
 @layer base {
   * {
-    @apply leading-[32px];
+    @apply leading-8; /* 32px = 2rem = leading-8 */
   }
 }
